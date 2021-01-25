@@ -1,5 +1,5 @@
 import hashlib
-from Crypto.Hash import SHA3_256
+from Cryptodome.Hash import SHA3_256
 
 class MerkleTools(object):
     def __init__(self):
