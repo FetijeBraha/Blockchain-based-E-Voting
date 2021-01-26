@@ -7,15 +7,9 @@
     <h1>Lista e votave të konfirmuara</h1>
     <a class="btn btn-light btn-sm" href="{% url 'simulation:blockchain' %}" role="button">Shikoni të gjitha blloqet</a>
     <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">Kthehuni në faqen kryesore</a>
-<<<<<<< HEAD
     <div style="margin:1%; padding:1%; border:1px solid rgb(19, 6, 54);">
         {% for r in result %}
         Kandidati #{{ forloop.counter }}: {{ r }} votes<br>
-=======
-    <div style="margin:1%; padding:1%; border:1px solid black;">
-        {% for r in result %}
-            Kandidati #{{ forloop.counter }}: {{ r }} votes<br>
->>>>>>> 1b0431c7f9294533755046094c6db0335ff3b706
         {% endfor %}
     </div>
 
@@ -41,11 +35,7 @@
                 <th scope="col">Vota</th>
                 <th scope="col">Timestamp</th>
                 <th scope="col">Hash</th>
-<<<<<<< HEAD
                 <th scope="col">Bloku</th>
-=======
-                <th scope="col">Blloku</th>
->>>>>>> 1b0431c7f9294533755046094c6db0335ff3b706
             </tr>
         </thead>
         <tbody>
