@@ -4,9 +4,9 @@
 
 {% block body_bl %}
 <div class="container">
-    <h1>List of blocks</h1>
-    <a class="btn btn-light btn-sm" href="{% url 'simulation:transactions' %}" role="button">See all transactions</a>
-    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">Back to homepage</a>
+    <h1>Lista e blloqeve</h1>
+    <a class="btn btn-light btn-sm" href="{% url 'simulation:transactions' %}" role="button">Shikoni të gjitha transaksionet</a>
+    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">Kthehuni në faqen kryesore</a>
     {% if messages %}
         {% for message in messages %}
             <div class="{{ message.extra_tags }} text-white">
@@ -36,7 +36,7 @@
                 <td>{{ block.timestamp|unix_to_date|date:"Y-m-d H:i:s" }}</td>
             </tr>
             {% empty %}
-                <p>No record.</p>
+            <p>Asnjë regjistrim.</p>
             {% endfor %}
         </tbody>
     </table>
