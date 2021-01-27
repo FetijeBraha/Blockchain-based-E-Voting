@@ -5,10 +5,10 @@
 
 {% block body_bl %}
 <div class="container">
-    <h1 class="pb-1">Block #{{ bk.id }}</h1>
-    <a class="btn btn-light btn-sm" href="{% url 'simulation:blockchain' %}" role="button">Back to blocks list</a>
-    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">Back to homepage</a>
-    <div class="mt-1" style="padding: 3%; border: 1px solid black;">
+    <h1 class="pb-1">Bloku #{{ bk.id }}</h1>
+    <a class="btn btn-light btn-sm" href="{% url 'simulation:blockchain' %}" role="button">Kthehu tek lista e blloqeve</a>
+    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">Kthehu në faqen kryesore</a>
+    <div class="mt-1" style="padding: 3%; border: 1px inset rgb(4, 4, 75);">
         <dl class="row">
             <dt class="col-sm-3">Previous hash</dt>
             <dd class="col-sm-9"><code>{{ bk.prev_h }}</code></dd>
@@ -68,7 +68,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Voter ID</th>
+                    <th scope="col">ID e votuesit</th>
                     <th scope="col">Cand</th>
                     <th scope="col">Timestamp</th>
                     <th scope="col">Hash</th>

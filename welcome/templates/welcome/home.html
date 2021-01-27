@@ -5,35 +5,44 @@
 {% block body_bl %}
 <div class="container">
     <div>
-        <h1 style="padding-bottom:5%;">Blockchain-based e-voting simulation</h1>
+        <body style="background-color:#fafafa;">
+            <img src= "{% static 'ballot/img/kosovo.jpg' %}" class="Kosova"> 
+        </body>
+        <h1 style="font-family:times new roman, sans-serif;
+        font-size: 3.5em;
+        letter-spacing: -1px;">Votimi elektronik i bazuar në blockchain</h1>
     </div>
     <div class="row">
         <div class="col-md-5 menu">
-            <h2>"BLOCK"</h2>
-            <p>This part will show:</p>
+            <h2 style="color: rgb(46, 37, 37);
+            font-family: courier;
+            font-size: 160%">"BLOCK"</h2>
+            <p>Kjo pjesë do të tregojë:</p>
             <ul>
-                <li>Example of ballot</li>
-                <li>Ballot structure</li>
-                <li>Signature verification</li>
-                <li>Block sealing process</li>
+                <li>Shembulli i votimit</li>
+                <li>Strukturën e votimit</li>
+                <li>Verifikimi i nënshkrimit</li>
+                <li>Procesi i vulosjes së bllokut</li>
             </ul>
             <div class="btn-menu">
                 <a class="btn btn-outline-primary btn-block btn-menu" href="{% url 'ballot:create' %}" role="button">Start</a>
             </div>
         </div>
         <div class="col-md-5 menu">
-            <h2>"CHAIN"</h2>
-            <p>This part will show:</p>
+            <h2 style="color: rgb(46, 37, 37);
+            font-family: courier;
+            font-size: 160%">"CHAIN"</h2>
+            <p>Kjo pjesë do të tregojë:</p>
             <ul>
-                <li>Batch transactions ({{ tx }})</li>
-                <li>Block chaining ({{ bl }})</li>
-                <li>Block detail</li>
-                <li>Blocks verification</li>
+                <li>Transaksionet e grumulluara({{ tx }})</li>
+                <li>Lidhja e Blokut me chain({{ bl }})</li>
+                <li>Detajet e bllokut</li>
+                <li>Verifikimi i Blokut</li>
             </ul>
             <div class="btn-menu">
                 <a class="btn btn-outline-primary btn-menu" href="{% url 'simulation:generate' %}" role="button">Start</a>
-                <a class="btn btn-link btn-menu" href="{% url 'simulation:transactions' %}" role="button">See transactions</a>
-                <a class="btn btn-link btn-menu" href="{% url 'simulation:blockchain' %}" role="button">See blocks</a>
+                <a class="btn btn-link btn-menu" href="{% url 'simulation:transactions' %}" role="button">Shiko transaksionet</a>
+                <a class="btn btn-link btn-menu" href="{% url 'simulation:blockchain' %}" role="button">Shiko bllokun</a>
             </div>
         </div>
     </div>
