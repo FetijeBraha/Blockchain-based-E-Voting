@@ -1,9 +1,9 @@
 import time, datetime
 import uuid
-from Cryptodome.Signature import DSS
-from Cryptodome.Hash import SHA3_256
-from Cryptodome.PublicKey import ECC
-from Cryptodome import Random
+from Crypto.Signature import DSS
+from Crypto.Hash import SHA3_256
+from Crypto.PublicKey import ECC
+from Crypto import Random
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -11,12 +11,14 @@ from django.shortcuts import redirect, render
 def create(request):
     if request.method == 'POST':
         voter_id = request.POST.get('voter-id-input')
+        voter_name= request.POST.get('voter-name-input')
+        voter_LastName= request.POST.get('voter-LastName-input')
         vote = request.POST.get('vote-input')
         private_key = request.POST.get('private-key-input')
 
         # Create ballot as string vector
         timestamp = datetime.datetime.now().timestamp()
-        ballot = "{}|{}|{}".format(voter_id, vote, timestamp)
+        ballot = "{}|{}|{}".format(voter_id,voter_name,voter_LastName, vote, timestamp)
         print('\ncasted ballot: {}\n'.format(ballot))
         signature = ''
         try:

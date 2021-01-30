@@ -32,6 +32,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Numri i votuesit (ID)</th>
+                <th scope="col">Emri i votuesit </th>
+                <th scope="col">Mbiemri i votuesit </th>
                 <th scope="col">Vota</th>
                 <th scope="col">Timestamp</th>
                 <th scope="col">Hash</th>
@@ -43,6 +45,8 @@
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td><code>{{ ballot.id }}</code></th>
+                 <td>{{ ballot.name }}</td>
+                 <td>{{ ballot.LastNname }}</td>
                 <td>{{ ballot.vote }}</td>
                 <td>{{ ballot.timestamp|unix_to_date|date:"Y-m-d H:i:s" }}</td>
                 <td title="{{ h }}"><code>{{ h|truncatechars:20 }}</code></td>
