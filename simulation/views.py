@@ -30,10 +30,12 @@ def generate(request):
     for i in range(1, number_of_transactions + 1):
         # generate random, valid values
         v_id = str(uuid4())
+        v_name = "test"
+        v_LastName = "test"
         v_cand = _get_vote()
         v_timestamp = _get_timestamp()
         # directly fill the values and the block id for simulation purpose
-        new_vote = Vote(id=v_id, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
+        new_vote = Vote(id=v_id, name=v_name, LastName=v_LastName, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
         new_backup_vote = VoteBackup(id=v_id, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
         # "Broadcast" to two nodes
         new_vote.save()
@@ -83,7 +85,7 @@ def seal(request):
             nonce += 1
 
         # Create the block
-        block = Block(id=i, prev_h=prev_hash, merkle_h=merkle_h, h=h, nonce=nonce, timestamp=timestamp)
+        block = Block(id=i, name=name, Lastname=LastName, prev_h=prev_hash, merkle_h=merkle_h, h=h, nonce=nonce, timestamp=timestamp)
         block.save()
         print('\nBlock {} is mined\n'.format(i))
         # Set this hash as prev hash
@@ -180,7 +182,7 @@ def sync(request):
     print('\nTrying to sync {} transactions with 1 node(s)...\n'.format(deleted_old_votes))
     bk_votes = VoteBackup.objects.all().order_by('timestamp')
     for bk_v in bk_votes:
-        vote = Vote(id=bk_v.id, vote=bk_v.vote, timestamp=bk_v.timestamp, block_id=bk_v.block_id)
+        vote = Vote(id=bk_v.id, name=bk_v.name, Lastname=bk_v.LastName, vote=bk_v.vote, timestamp=bk_v.timestamp, block_id=bk_v.block_id)
         vote.save()
     print('\nSync complete.\n')
     messages.info(request, 'All blocks have been synced successfully.')
@@ -195,7 +197,7 @@ def sync_block(request, block_id):
     # Then rewrite from backup node
     bak_votes = VoteBackup.objects.filter(block_id=block_id).order_by('timestamp')
     for bv in bak_votes:
-        v = Vote(id=bv.id, vote=bv.vote, timestamp=bv.timestamp, block_id=bv.block_id)
+        v = Vote(id=bv.id, name=bv.name, Lastname=bv.LastName, vote=bv.vote, timestamp=bv.timestamp, block_id=bv.block_id)
         v.save()
     # Just in case, delete transactions without valid block
     block_count = Block.objects.all().count()
@@ -247,6 +249,6 @@ def block_detail(request, block_hash):
 # HELPER FUNCTIONS
 def _get_vote():
     return randint(1, 3)
-
+    
 def _get_timestamp():
     return datetime.datetime.now().timestamp()
