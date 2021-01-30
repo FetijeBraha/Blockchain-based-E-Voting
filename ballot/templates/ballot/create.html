@@ -3,6 +3,7 @@
 {% block title_bl %}Create ballot{% endblock %}
 {% block body_bl %}
 <div class="container" style="border: 5px solid rgb(224, 224, 224); background-color: #F5F5F5; border-radius:15px;">
+    <img src="{% static 'ballot/img/kosovo.jpg' %}" style="border:1px solid grey; border-color:lightgrey;">
     <h3 style="text-align:center; color:grey; margin-top:25px;">Zgjedhjet parlamentare - 14 Shkurt 2021</h3>
     <form action="{% url 'ballot:create' %}" method="POST">
         {% csrf_token %}
