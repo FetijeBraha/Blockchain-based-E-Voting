@@ -9,16 +9,15 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
             name='Block',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                 ('name', models.CharField(default=simulation.models.get_name)),
-                ('LastName', models.CharField(default=simulation.models.get_LastName)),
+                ('name', models.CharField(blank=True, max_length=64)),
+                ('LastName', models.CharField(blank=True, max_length=64)),
                 ('prev_h', models.CharField(blank=True, max_length=64)),
                 ('merkle_h', models.CharField(blank=True, max_length=64)),
                 ('h', models.CharField(blank=True, max_length=64)),
@@ -30,8 +29,8 @@ class Migration(migrations.Migration):
             name='Vote',
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
-                 ('name', models.CharField(default=simulation.models.get_name)),
-                ('LastName', models.CharField(default=simulation.models.get_LastName)),
+                ('name', models.CharField(blank=True, max_length=64)),
+                ('LastName', models.CharField(blank=True, max_length=64)),
                 ('vote', models.IntegerField(default=simulation.models.get_vote)),
                 ('timestamp', models.FloatField(default=simulation.models.get_timestamp)),
                 ('block_id', models.IntegerField(null=True)),
@@ -41,8 +40,8 @@ class Migration(migrations.Migration):
             name='VoteBackup',
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
-                 ('name', models.CharField(default=simulation.models.get_name)),
-                ('LastName', models.CharField(default=simulation.models.get_LastName)),
+                ('name', models.CharField(blank=True, max_length=64)),
+                ('LastName', models.CharField(blank=True, max_length=64)),
                 ('vote', models.IntegerField(default=simulation.models.get_vote)),
                 ('timestamp', models.FloatField(default=simulation.models.get_timestamp)),
                 ('block_id', models.IntegerField(null=True)),

@@ -21,7 +21,7 @@ class Vote(models.Model):
     block_id = models.IntegerField(null=True)
 
     def __str__(self):
-        return "{}|{}|{}".format(self.id, self.Name, self.LastName, self.vote, self.timestamp)
+        return "{}|{}|{}".format(self.id, self.name, self.LastName, self.vote, self.timestamp)
 
 class Block(models.Model):
     prev_h = models.CharField(max_length=64, blank=True)

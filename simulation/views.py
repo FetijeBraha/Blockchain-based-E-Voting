@@ -35,7 +35,7 @@ def generate(request):
         v_cand = _get_vote()
         v_timestamp = _get_timestamp()
         # directly fill the values and the block id for simulation purpose
-        new_vote = Vote(id=v_id, name=v_name, v_LastName=v_LastName, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
+        new_vote = Vote(id=v_id, name=v_name, LastName=v_LastName, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
         new_backup_vote = VoteBackup(id=v_id, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
         # "Broadcast" to two nodes
         new_vote.save()

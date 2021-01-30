@@ -50,6 +50,11 @@ def create(request):
     context = {'voter_id': uuid.uuid4(), }
     return render(request, 'ballot/create.html', context)
 
+    context = {'voter_name': uuid.uuid4(), }
+    return render(request, 'ballot/create.html', context)
+    context = {'voter_LastName': uuid.uuid4(), }
+    return render(request, 'ballot/create.html', context)
+
 def seal(request):
     if request.method == 'POST':
         ballot = request.POST.get('ballot_input')
