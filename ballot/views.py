@@ -15,10 +15,11 @@ def create(request):
         voter_LastName= request.POST.get('voter-LastName-input')
         vote = request.POST.get('vote-input')
         private_key = request.POST.get('private-key-input')
+        komuna = request.POST.get('private-key-input')
 
         # Create ballot as string vector
         timestamp = datetime.datetime.now().timestamp()
-        ballot = "{}|{}|{}".format(voter_id,voter_name,voter_LastName, vote, timestamp)
+        ballot = "{}|{}|{}".format(voter_id,voter_name,voter_LastName, vote, komuna, timestamp)
         print('\ncasted ballot: {}\n'.format(ballot))
         signature = ''
         try:
