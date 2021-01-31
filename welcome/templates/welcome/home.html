@@ -3,37 +3,169 @@
 {% block title_bl %}Home{% endblock %}
 
 {% block body_bl %}
+
 <div class="container">
     <div>
         <body style="background-color:#fafafa;">
             <!-- <img src= "{% static 'ballot/img/kosovo.jpg' %}" class="Kosova">  -->
         </body>
-        <h6 style="font-family:times new roman, sans-serif;
-        font-size: 3.5em;
-        letter-spacing: -1px;">Votimi elektronik i bazuar në blockchain</h6>
+        <h1 style="font-family:times new roman, sans-serif;
+        letter-spacing: -1px; margin-left: 25px; padding-top:50px;">Votimi elektronik i bazuar në blockchain</h1>
+<style>
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+
+}
+.header{
+    height:163px;
+    border:1px;
+    background-color: #272727;
+    position: fixed;
+    top:0;
+    left:0;
+} 
+.header1{
+    height:76px;
+    width:100%;
+    position:fixed;
+    background-color: #272727;
+    padding-bottom:8px;
+}
+.aside{
+    float:left;
+    width:30%; 
+    height:76px;
+    background-color: #272727;
+    padding-bottom:8px;
+}
+
+.pozita{
+    display:inline;
+}
+
+.after{
+    height:76px;
+    background-color: #272727;
+    padding-bottom:8px;
+}
+
+.header1 h2{
+    font-size:19px;
+    font-weight:640; 
+    color:#ce9921;
+    margin-top: 0px;
+    padding-top:25px;
+}
+.header2{
+    height:53px;
+    background-color:#424242;
+    margin:0;
+    padding:0;
+    width:100%;
+    
+}  
+
+#navigation{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+#navigation ul{
+    list-style-type:none;
+    overflow:hidden;
+    height:50px;
+    padding-left:0px;
+    border-radius:10px;
+    margin:0;
+    padding:2px;
+}
+
+#navigation ul li a{
+    padding:15px 20px;
+    font-size:18px;
+    font-weight:640;
+    text-decoration:none;
+    color:white;
+    line-height: 50px; 
+    border-radius:40px;
+}
+.a:hover{
+    background-color: #ce9921;
+    color:rgb(255, 255, 255);
+}
+.a{
+    padding:15px 20px;
+    font-size:18px;
+    font-weight:500;
+    text-decoration:none;
+    color: #ce9921;
+    line-height: 15px; 
+    border-radius:20px;
+}
+   </style>
+   <header class="header">
+       <div>
+                 <div class="header1"> 
+                      <div class="pozita">
+                  <div class="aside">
+                      <!-- <img src= "{% static 'ballot/img/stema.png' %}" alt="Logo" width="60" height="60" style="position:fixed;left:394px; top:5px;" > -->
+                 </div>
+                 <div class="after">
+                  <h2 style="color:white;font-size: 23px;position:fixed;right:394px">PORTALI SHTETËROR I REPUBLIKËS SË KOSOVËS</h2>
+                 </div>
+                      </div>
+                 <hr style="margin:0; padding:0; background-color: #F7D25F"/>
+                 <div style="height:7px; background-color: #272727;"></div>
+                 <div class="header2">
+                   <nav id="navigation">                      
+                       <ul>
+                        <li style="padding-left:500px;" ><a class="activebar">Votimi elektronik i bazuar në blockchain</a></li>   
+                       </ul> 
+                   </nav>
+
+            </div>
+            <div style="height:7px; background-color: #272727;"></div>
+            <hr style="margin:0; padding:0; background-color: #F7D25F"/>
+            <div style="height:7px; background-color: #272727;"></div>
+            </div>
+</header>
+<div style="height:70px"></div>
+
+<div>
+    <div>
+        <body style="background-color:#ffffff;height:500px;margin-left:175px;width:1000px;">
+            
+        </body>
     </div>
     <div class="row">
         <div class="col-md-5 menu">
             <h2 style="color: rgb(46, 37, 37);
-            font-family: courier;
             font-size: 160%">"BLOCK"</h2>
-            <p>Kjo pjesë do të tregojë:</p>
-            <ul>
+            <p style="font-size:18px;
+            font-weight:640;
+            text-decoration:none;">Kjo pjesë do të tregojë:</p>
+            <ul style="width:80%;padding-top:10px">
                 <li>Shembulli i votimit</li>
                 <li>Strukturën e votimit</li>
                 <li>Verifikimi i nënshkrimit</li>
                 <li>Procesi i vulosjes së bllokut</li>
             </ul>
             <div class="btn-menu">
+
                 <a class="btn btn-outline-primary btn-block btn-menu" href="{% url 'ballot:create' %}" role="button">Start</a>
+
             </div>
         </div>
         <div class="col-md-5 menu">
             <h2 style="color: rgb(46, 37, 37);
-            font-family: courier;
             font-size: 160%">"CHAIN"</h2>
-            <p>Kjo pjesë do të tregojë:</p>
-            <ul>
+            <p style="font-size:18px;
+            font-weight:640;
+            text-decoration:none;">Kjo pjesë do të tregojë:</p>
+            <ul style="width:100%;">
                 <li>Transaksionet e grumulluara({{ tx }})</li>
                 <li>Lidhja e Blokut me chain({{ bl }})</li>
                 <li>Detajet e bllokut</li>
