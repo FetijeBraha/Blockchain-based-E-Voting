@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title_bl %}Transaksionet{% endblock %}
+
+{% block body_bl %}
+<div class="container">
+    <h1>Lista e votave të pakonfirmuara</h1>
+    <p>100 transaksionet e fundit (or all if &lt;=100)</p>
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Numri i votuesit (ID)</th>
+                <th scope="col">Vota</th>
+                <th scope="col">Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ballot in votes %}
+            <tr>
+                <td><code>{{ ballot.id }}</code></th>
+                <td>{{ ballot.vote }}</td>
+                <td>{{ ballot.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a class="btn btn-primary btn-block" href="{% url 'simulation:seal' %}" role="button">Mine në blloqe</a>
+</div>
+{% endblock %}

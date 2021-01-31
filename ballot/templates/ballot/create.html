@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title_bl %}Create ballot{% endblock %}
+{% block body_bl %}
+<div class="container" style="border: 5px solid rgb(224, 224, 224); background-color: #F5F5F5; border-radius:15px;">
+    <h3 style="text-align:center; color:grey; margin-top:25px;">Zgjedhjet parlamentare - 14 Shkurt 2021</h3>
+    <form action="{% url 'ballot:create' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="voter-id-input" style="margin-left:auto; margin-right:auto;">Numri personal (ID):</label>
+            <input name="voter-id-input" type="text" class="form-control" id="voter-id-input" placeholder="fe021e59-c29d-4532-9e99-5c42f1910af3" value="{{ voter_id }}" style="width:40%; border-radius:10px; border: solid rgb(224, 224, 224); outline:none;" required>
+            <label for="voter-name-input" style="margin-left:auto; margin-right:auto;">Emri i Votuesit :</label>
+            <input name="voter-name-input" type="text" class="form-control" id="voter-name-input" placeholder="Filan" value="{{ voter_name }}" style="width:40%; border-radius:10px; border: solid rgb(224, 224, 224); outline:none;" required>
+            <label for="voter-LastName-input" style="margin-left:auto; margin-right:auto;">Mbiemri i Votuesit :</label>
+            <input name="voter-LastName-input" type="text" class="form-control" id="voter-LastName-input" placeholder="Fisteku" value="{{ voter_LastName }}" style="width:40%; border-radius:10px; border: solid rgb(224, 224, 224); outline:none;" required>
+        </div>
+        <div id="candidate" style="padding:20px 0;">
+            <p style="text-align:center;">Kandidatët për kryeministër:</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <p style="text-align: center;"><img src="{% static 'ballot/img/albin.jpg' %}" style="border:1px solid grey; border-color:lightgrey;"></p>
+                    <p style="text-align: center;">  Lëvizja Vetëvendosje: Albin Kurti (Voto 1)</p>
+                </div>
+                <div class="col-md-4">
+                    <p style="text-align: center;"><img src="{% static 'ballot/img/avdullah.jpg' %}" style="border:1px solid grey; border-color:lightgrey;"></p>
+                    <p style="text-align: center;">Lidhja Demokratike e Kosovës: Avdullah Hoti (Voto 2)</p>
+                </div>
+                <div class="col-md-4">
+                    <p style="text-align: center;"><img src="{% static 'ballot/img/enver.jpg' %}" style="border:1px solid grey; border-color:lightgrey;"></p>
+                    <p style="text-align: center;">Partia Demokratike e Kosovës: Enver Hoxhaj (Voto 3)</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="vote-input">Zgjedhni kandidatin për votë:</label>
+                <input name="vote-input" type="number" class="form-control" id="voter-input" placeholder=" " min="1" max="3"  style=" width:10%" required>
+            </div>
+        <div class="form-group">
+            <label for="private-key-textarea">Çelësi privat:</label>
+            <textarea name="private-key-input" class="form-control" id="private-key-textarea" rows="6" style="width:50%;"></textarea>
+            <small id="privatekeyHelpBlock" class="form-text text-muted">
+                Çelësi publik duhet të regjistrohet.
+            </small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="width:10%">Sumbit</button>
+    </form>
+</div>
+{% endblock %}
