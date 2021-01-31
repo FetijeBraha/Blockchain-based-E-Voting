@@ -35,6 +35,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='vote',
             name='komuna',
+            field=models.CharField(max_length=200),
         ),
         migrations.AlterField(
             model_name='votebackup',
@@ -49,5 +50,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='votebackup',
             name='komuna',
+            field=models.CharField(max_length=200),
         ),
     ]

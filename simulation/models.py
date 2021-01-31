@@ -7,6 +7,8 @@ def get_name():
     return name
 def get_LastName():
     return LastName
+def get_komuna():
+    return komuna
 
 def get_timestamp():
     return datetime.datetime.now().timestamp()
@@ -16,7 +18,7 @@ class Vote(models.Model):
     name = models.CharField(max_length=200)
     LastName = models.CharField(max_length=200)
     vote = models.IntegerField(default=get_vote)
-    komuna = models.CharsField(max_length=200)
+    komuna = models.CharField(max_length=200)
     timestamp = models.FloatField(default=get_timestamp)
     # Not ForeignKey! See transactions() in simulation.views for implications
     block_id = models.IntegerField(null=True)
@@ -40,7 +42,7 @@ class VoteBackup(models.Model):
     name = models.CharField(max_length=200)
     LastName = models.CharField(max_length=200)
     vote = models.IntegerField(default=get_vote)
-    komuna = models.CharsField(max_length=200)
+    komuna = models.CharField(max_length=200)
     timestamp = models.FloatField(default=get_timestamp)
     block_id = models.IntegerField(null=True)
 
