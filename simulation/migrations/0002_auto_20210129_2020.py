@@ -18,6 +18,10 @@ class Migration(migrations.Migration):
             model_name='block',
             name='name',
         ),
+        migrations.RemoveField(
+            model_name='block',
+            name='komuna',
+        ),
         migrations.AlterField(
             model_name='vote',
             name='LastName',
@@ -29,6 +33,11 @@ class Migration(migrations.Migration):
             field=models.CharField(max_length=200),
         ),
         migrations.AlterField(
+            model_name='vote',
+            name='komuna',
+            field=models.CharField(max_length=200),
+        ),
+        migrations.AlterField(
             model_name='votebackup',
             name='LastName',
             field=models.CharField(max_length=200),
@@ -36,6 +45,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='votebackup',
             name='name',
+            field=models.CharField(max_length=200),
+        ),
+        migrations.AlterField(
+            model_name='votebackup',
+            name='komuna',
             field=models.CharField(max_length=200),
         ),
     ]

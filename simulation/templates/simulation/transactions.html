@@ -35,6 +35,7 @@
                 <th scope="col">Emri i votuesit </th>
                 <th scope="col">Mbiemri i votuesit </th>
                 <th scope="col">Vota</th>
+                <th scope="col">Kommuna</th>
                 <th scope="col">Timestamp</th>
                 <th scope="col">Hash</th>
                 <th scope="col">Blloku</th>
@@ -48,6 +49,7 @@
                  <td>{{ ballot.name }}</td>
                  <td>{{ ballot.LastNname }}</td>
                 <td>{{ ballot.vote }}</td>
+                <td>{{ ballot.komuna }}</td>
                 <td>{{ ballot.timestamp|unix_to_date|date:"Y-m-d H:i:s" }}</td>
                 <td title="{{ h }}"><code>{{ h|truncatechars:20 }}</code></td>
                 <td><a class="btn btn-light btn-sm" href="{% url 'simulation:block_detail' block_hash=bh %}" role="button">go to block</a></td>
