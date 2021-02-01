@@ -2,50 +2,251 @@
 {% load static %}
 {% block title_bl %}Create ballot{% endblock %}
 {% block body_bl %}
-<div class="container" style="border: 5px solid rgb(224, 224, 224); background-color: #F5F5F5; border-radius:15px;">
-    <img src="{% static 'ballot/img/kosovo.jpg' %}" style="border:1px solid grey; border-color:lightgrey;">
-    <h3 style="text-align:center; color:grey; margin-top:25px;">Zgjedhjet parlamentare - 14 Shkurt 2021</h3>
+<script>
+    function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+    }
+</script>
+<style>
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+    
+    }
+    .header{
+        height:163px;
+        border:1px;
+        background-color: #272727;
+        position: fixed;
+        top:0;
+        left:0;
+    } 
+    .header1{
+        height:76px;
+        width:100%;
+        position:fixed;
+        background-color: #272727;
+        padding-bottom:8px;
+    }
+    .aside{
+        float:left;
+        width:30%; 
+        height:76px;
+        background-color: #272727;
+        padding-bottom:8px;
+    }
+    
+    .pozita{
+        display:inline;
+    }
+    
+    .after{
+        height:76px;
+        background-color: #272727;
+        padding-bottom:8px;
+    }
+    
+    .header1 h2{
+        font-size:19px;
+        font-weight:400; 
+        color:#ce9921;
+        margin-top: 0px;
+        padding-top:15px;
+    }
+    .header2{
+        height:53px;
+        background-color:#424242;
+        margin:0;
+        padding:0;
+        width:100%;
+        
+    }  
+    
+    #navigation{
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+    #navigation ul{
+        list-style-type:none;
+        overflow:hidden;
+        height:50px;
+        padding-left:0px;
+        border-radius:10px;
+        margin:0;
+        padding:2px;
+    }
+    
+    #navigation ul li a{
+        padding:15px 20px;
+        font-size:18px;
+        font-weight:640;
+        text-decoration:none;
+        color:white;
+        line-height: 50px; 
+        border-radius:40px;
+    }
+    .a:hover{
+        background-color: #ce9921;
+        color:rgb(255, 255, 255);
+    }
+    .a{
+        padding:15px 20px;
+        font-size:18px;
+        font-weight:500;
+        text-decoration:none;
+        color: #ce9921;
+        line-height: 15px; 
+        border-radius:20px;
+    }
+    
+    .voto-kutite{
+        display:flex;
+        width:1300px;
+    }
+    .voto{
+        width:92%;
+        height: 200px;
+        padding-top: 30px;
+        padding-left:12%;
+        box-sizing: border-box;
+        color:white;
+        font-size:15px;
+        font-weight: 500;
+    }
+    .voto-kutia1{
+        background-color: transparent;
+        height:230px;
+        width:470px;
+    }
+
+    .voto-kutia2{
+        background-color: transparent;
+        height:230px;
+        width:470px;
+    }
+    .voto input[type="text"]
+    {
+        border: none;
+        border-bottom: 1px solid rgb(0, 0, 0);
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        width:30px;
+    }
+    .voto input[type="submit"] {
+        height: 50px;
+        color: #fff;
+        font-size: 15px;
+        background:  #ce9921;
+        cursor: pointer;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        margin-top: 0%;
+        margin-left:25%;
+    }
+    .voto ::placeholder{
+        color:white;
+    }
+    textarea {
+        resize: none;
+        overflow: hidden;
+        width:70%;
+        min-height: 50px;
+        height:auto;
+        background-color:transparent;
+        color:white;
+        font-size:17px;
+        font-weight:300;
+        font-family: 'Alegreya Sans';
+}
+
+</style>
+
+<header class="header">
+    <div>
+              <div class="header1"> 
+                   <div class="pozita">
+               <div class="aside">
+                   <img src= "{% static 'ballot/img/stema.png' %}" alt="Logo" width="55" height="55" style="position:fixed;left:80px; top:8px;" > 
+              </div>
+              <div class="after">
+               <h2 style="color:white;font-size: 20px;position:fixed;left:145px"><b>PORTALI SHTETËROR</b> </br> <p style="font-size:16px;">I REPUBLIKËS SË KOSOVËS</p></h2>
+              </div>
+                   </div>
+              <hr style="margin:0; padding:0; background-color: #F7D25F"/>
+              <div style="height:7px; background-color: #272727;"></div>
+              <div class="header2">
+                <nav id="navigation">                      
+                    <ul>
+                     <li style="text-align: center;" ><a style="font-size:18px" class="activebar">Zgjedhjet parlamentare - 14 Shkurt 2021</a></li>   
+                    </ul> 
+                </nav>
+
+         </div>
+         <div style="height:7px; background-color: #272727;"></div>
+         <hr style="margin:0; padding:0; background-color: #F7D25F"/>
+         <div style="height:7px; background-color: #272727;"></div>
+         </div>
+</header>
+<div style="height:50px"></div>
+<div class="container" style="border: 2px solid rgb(0, 0, 0); background: rgba(255, 255, 255, 0.309); border-radius:15px;">
+    <!---<img src="{% static 'ballot/img/kosovo.jpg' %}" style="border:1px solid grey; border-color:lightgrey;">--->
+    <!---<h3 style="text-align:center; color:grey; margin-top:25px;">Zgjedhjet parlamentare - 14 Shkurt 2021</h3>--->
+    <div class="voto">
     <form action="{% url 'ballot:create' %}" method="POST">
+        <div class="voto-kutite">
         {% csrf_token %}
-        <div class="form-group">
-            <label for="voter-id-input" style="margin-left:auto; margin-right:auto;">Numri personal (ID):</label>
-            <input name="voter-id-input" type="text" class="form-control" id="voter-id-input" placeholder="Numri personal" value="{{ voter_id }}" style="width:40%; border-radius:10px; border: solid rgb(224, 224, 224); outline:none;" required>
-            <label for="voter-name-input" style="margin-left:auto; margin-right:auto;">Emri i Votuesit :</label>
-            <input name="voter-name-input" type="text" class="form-control" id="voter-name-input" placeholder="Emri" value="{{ voter_name }}" style="width:40%; border-radius:10px; border: solid rgb(224, 224, 224); outline:none;" required>
-            <label for="voter-LastName-input" style="margin-left:auto; margin-right:auto;">Mbiemri i Votuesit :</label>
-            <input name="voter-LastName-input" type="text" class="form-control" id="voter-LastName-input" placeholder="Mbiemri" value="{{ voter_LastName }}" style="width:40%; border-radius:10px; border: solid rgb(224, 224, 224); outline:none;" required>
-            <label for="voter-LastName-input" style="margin-left:auto; margin-right:auto;">Komuna :</label>
-            <input name="voter-LastName-input" type="text" class="form-control" id="voter-LastName-input" placeholder="Komuna" value="{{ voter_LastName }}" style="width:40%; border-radius:10px; border: solid rgb(224, 224, 224); outline:none;" required>
+        <div class="voto-kutia1">
+            <label for="voter-id-input" style="margin-left:auto; margin-right:auto;color:black;">Numri personal (ID):</label>
+            <input name="voter-id-input" type="text" class="form-control" id="voter-id-input"  value="{{ voter_id }}" style="width:72%; " required>
+            <label for="voter-name-input" style="margin-left:auto; margin-right:auto;color:black;padding-top:10px">Emri i Votuesit :</label>
+            <input name="voter-name-input" type="text" class="form-control" id="voter-name-input" value="{{ voter_name }}" style="width:72%;" required>
+        </div> 
+        <div class="voto-kutia2">  
+            <label for="voter-LastName-input" style="margin-left:auto; margin-right:auto;color:black;">Mbiemri i Votuesit :</label>
+            <input name="voter-LastName-input" type="text" class="form-control" id="voter-LastName-input" value="{{ voter_LastName }}" style="width:72%; outline:none;" required>
+            <label for="voter-LastName-input" style="margin-left:auto; margin-right:auto;color:black;padding-top:10px">Komuna :</label>
+            <input name="voter-LastName-input" type="text" class="form-control" id="voter-LastName-input" value="{{ voter_LastName }}" style="width:72%; outline:none;" required>
+        </div>
+    </div>
         </div>
         <div id="candidate" style="padding:20px 0;">
-            <p style="text-align:center;">Kandidatët për kryeministër:</p>
+            <p style="text-align:center;font-size: 17px;font-weight:600;">Kandidatët për kryeministër:</p>
             <div class="row">
-                <div class="col-md-4">
-                    <p style="text-align: center;"><img src="{% static 'ballot/img/albin.jpg' %}" style="border:1px solid grey; border-color:lightgrey;"></p>
-                    <p style="text-align: center;">  Lëvizja Vetëvendosje: Albin Kurti (Voto 1)</p>
+                <div style = "position:static" class="col-md-4">
+                    <p style="text-align: center; "><img src="{% static 'ballot/img/albin.jpg' %}" style="border:1px solid grey; border-color:lightgrey;"></p>
+                    <p style="text-align: center;font-weight:500;">  Lëvizja Vetëvendosje: Albin Kurti </br>(Voto 1)</p>
                 </div>
-                <div class="col-md-4">
+                <div style = "position:static" class="col-md-4">
                     <p style="text-align: center;"><img src="{% static 'ballot/img/avdullah.jpg' %}" style="border:1px solid grey; border-color:lightgrey;"></p>
-                    <p style="text-align: center;">Lidhja Demokratike e Kosovës: Avdullah Hoti (Voto 2)</p>
+                    <p style="text-align: center;font-weight:500;">Lidhja Demokratike e Kosovës: Avdullah Hoti (Voto 2)</p>
                 </div>
-                <div class="col-md-4">
+                <div style = "position:static" class="col-md-4">
                     <p style="text-align: center;"><img src="{% static 'ballot/img/enver.jpg' %}" style="border:1px solid grey; border-color:lightgrey;"></p>
-                    <p style="text-align: center;">Partia Demokratike e Kosovës: Enver Hoxhaj (Voto 3)</p>
+                    <p style="text-align: center;font-weight:500;">Partia Demokratike e Kosovës: Enver Hoxhaj (Voto 3)</p>
                 </div>
-            </div>
+        </div>
         </div>
         <div class="form-group">
-                <label for="vote-input">Zgjedhni kandidatin për votë:</label>
-                <input name="vote-input" type="number" class="form-control" id="voter-input" placeholder=" " min="1" max="3"  style=" width:10%" required>
+                <label for="vote-input" style="margin-left:40.5%;font-weight:700">Zgjedhni kandidatin për votë:</label>
+                <input name="vote-input" type="number" class="form-control" id="voter-input" placeholder=" " min="1" max="3"  style=" width:200px; margin-left:458px" required>
             </div>
         <div class="form-group">
-            <label for="private-key-textarea">Çelësi privat:</label>
-            <textarea name="private-key-input" class="form-control" id="private-key-textarea" rows="6" style="width:50%;"></textarea>
-            <small id="privatekeyHelpBlock" class="form-text text-muted">
+            <label for="private-key-textarea" style="margin-left:46%">Çelësi privat:</label>
+            <textarea name="private-key-input" class="form-control" oninput="auto_grow(this)" id="private-key-textarea" style="width:50%;margin-left:25%"></textarea>
+            <small id="privatekeyHelpBlock" class="form-text text-muted" style="margin-left:41%">
                 Çelësi publik duhet të regjistrohet.
             </small>
         </div>
-        <button type="submit" class="btn btn-primary btn-block" style="width:10%">Sumbit</button>
+        <button type="submit" class="btn btn-primary btn-block a" style="margin-left:40%;margin-bottom:10px;width:20%;background-color: #ce9921;color:white">votoni</button>
     </form>
+</div>
 </div>
 {% endblock %}
