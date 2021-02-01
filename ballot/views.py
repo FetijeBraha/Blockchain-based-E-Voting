@@ -1,9 +1,9 @@
 import time, datetime
 import uuid
-from Cryptodome.Signature import DSS
-from Cryptodome.Hash import SHA3_256
-from Cryptodome.PublicKey import ECC
-from Cryptodome import Random
+from Crypto.Signature import DSS
+from Crypto.Hash import SHA3_256
+from Crypto.PublicKey import ECC
+from Crypto import Random
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
