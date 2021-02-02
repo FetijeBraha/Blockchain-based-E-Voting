@@ -15,11 +15,10 @@ def create(request):
         voter_LastName= request.POST.get('voter-LastName-input')
         vote = request.POST.get('vote-input')
         private_key = request.POST.get('private-key-input')
-        komuna = request.POST.get('private-key-input')
 
         # Create ballot as string vector
         timestamp = datetime.datetime.now().timestamp()
-        ballot = "{}|{}|{}".format(voter_id,voter_name,voter_LastName, vote, komuna, timestamp)
+        ballot = "{}|{}|{}".format(voter_id,voter_name,voter_LastName, vote, timestamp)
         print('\ncasted ballot: {}\n'.format(ballot))
         signature = ''
         try:
@@ -34,10 +33,10 @@ def create(request):
             verifier = DSS.new(pub_key, 'fips-186-3')
         
             verifier.verify(h, signature)
-            status = 'The ballot is signed successfully.'
+            status = 'Votimi nënshkruhet me sukses.'
             error = False
         except (ValueError, TypeError):
-            status = 'The key is not registered.'
+            status = 'Çelësi nuk është regjistruar.'
             error = True
         
         context = {

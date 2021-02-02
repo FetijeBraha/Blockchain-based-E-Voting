@@ -32,11 +32,10 @@ def generate(request):
         v_id = str(uuid4())
         v_name = "test"
         v_LastName = "test"
-        v_komuna = "test"
         v_cand = _get_vote()
         v_timestamp = _get_timestamp()
         # directly fill the values and the block id for simulation purpose
-        new_vote = Vote(id=v_id, name=v_name, LastName=v_LastName, vote=v_cand, komuna=v_komuna, timestamp=v_timestamp, block_id=block_no)
+        new_vote = Vote(id=v_id, name=v_name, LastName=v_LastName, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
         new_backup_vote = VoteBackup(id=v_id, vote=v_cand, timestamp=v_timestamp, block_id=block_no)
         # "Broadcast" to two nodes
         new_vote.save()
@@ -86,7 +85,7 @@ def seal(request):
             nonce += 1
 
         # Create the block
-        block = Block(id=i, name=name, Lastname=LastName, komuna=komuna, prev_h=prev_hash, merkle_h=merkle_h, h=h, nonce=nonce, timestamp=timestamp)
+        block = Block(id=i, name=name, Lastname=LastName, prev_h=prev_hash, merkle_h=merkle_h, h=h, nonce=nonce, timestamp=timestamp)
         block.save()
         print('\nBlock {} is mined\n'.format(i))
         # Set this hash as prev hash
@@ -198,7 +197,7 @@ def sync_block(request, block_id):
     # Then rewrite from backup node
     bak_votes = VoteBackup.objects.filter(block_id=block_id).order_by('timestamp')
     for bv in bak_votes:
-        v = Vote(id=bv.id, name=bv.name, Lastname=bv.LastName, komuna=bv.komuna, vote=bv.vote, timestamp=bv.timestamp, block_id=bv.block_id)
+        v = Vote(id=bv.id, name=bv.name, Lastname=bv.LastName, vote=bv.vote, timestamp=bv.timestamp, block_id=bv.block_id)
         v.save()
     # Just in case, delete transactions without valid block
     block_count = Block.objects.all().count()

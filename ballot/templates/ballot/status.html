@@ -3,10 +3,10 @@
 
 {% block body_bl %}
 <div class="container">
-    <h1>Signature Verification</h1>
-    <div style="padding:3%; border:1px solid black;">
-        <p>Your ballot was <code>{{ ballot }}</code></p>
-        <p>Generated signature <code>{{ signature }}</code></p><br>
+    <h1>Verifikimi i Nënshkrimit</h1>
+    <div style="padding:3%; border: 2px solid rgb(0, 0, 0); background: rgba(255, 255, 255, 0.309); border-radius:10px">
+        <p>Votuesi ishte <code>{{ ballot }}</code></p>
+        <p>Nënshkrimi i gjeneruar <code>{{ signature }}</code></p><br>
         <p style="color:{% if error %}red{% else %}green{% endif %};">
             {{ status }}
         </p>
@@ -15,10 +15,10 @@
         <form action="{% url 'ballot:seal' %}" method="POST">
             {% csrf_token %}
             <input name="ballot_input" type="hidden" value="{{ ballot }}">
-            <button type="submit" class="btn btn-primary btn-block">Seal the ballot</button>
+            <button type="submit" class="btn btn-primary btn-block">Vulosni fletën e votimit</button>
         </form>
         {% endif %}
     </div>
 </div>
-
+    
 {% endblock %}
