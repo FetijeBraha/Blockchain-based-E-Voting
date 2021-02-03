@@ -21,9 +21,9 @@ Përmes faqes së votimit (si më poshtë), votuesi duhet të shkruajë pseudoni
 
 Në këtë seksion, do të gjenerohen transaksione (fletëvotime) me të dhëna të vlefshme. Më pas ato mbyllen në blloqe. Pas kësaj, ju mund të eksploroni transaksionet dhe blloqet, si dhe të përpiqeni të manipuloni të dhënat dhe t'i verifikoni ato. 
 
-![Sealed ballot](https://user-images.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/Screenshot_3.jpg)
-
-![Block](https://user-images.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/Screenshot_4.jpg)
+![Screenshot_2](https://user-images.githubusercontent.com/75855158/106808560-d588a200-666a-11eb-8168-09d6fe115813.png)
+![Screenshot_3](https://user-images.githubusercontent.com/75855158/106808562-d6213880-666a-11eb-94c8-79dcf9c5b09e.png)
+![Screenshot_4](https://user-images.githubusercontent.com/75855158/106808564-d6b9cf00-666a-11eb-8424-35e30d170a24.png)
 
 <!-- _The screenshot above shows that a node's database (i.e., your node) has been tampered. You will not see this in real blockchain explorer, but this should give you a glimpse of why tampering immutable ledger is futile._ -->
 
