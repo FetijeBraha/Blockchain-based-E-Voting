@@ -1,7 +1,7 @@
 import datetime, time, json, math
 from random import randint
 from uuid import uuid4
-from Crypto.Hash import SHA3_256
+from Cryptodome.Hash import SHA3_256
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.conf import settings
 from django.contrib import messages

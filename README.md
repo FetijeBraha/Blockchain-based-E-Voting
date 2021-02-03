@@ -1,6 +1,6 @@
 # Blockchain-based E-voting Simulation
 
-## Description
+## Përshkrimi
 
 Ky është një projekt i bazuar në Python Django për të simuluar një koncept të protokollit të votimit elektronik të bazuar në blockchain. Ky projekt duhet të ekzekutohet vetëm në serverin e zhvillimit me mënyrën Debug të aktivizuar. Simulimi përfshin dy seksione:  __"Block"__ dhe __"Chain"__.
 ![block and chain](https://user-images.githubusercontent.com/76743818/106743346-8c126580-661e-11eb-87e3-e274f663f98e.png)
@@ -10,43 +10,42 @@ Ky është një projekt i bazuar në Python Django për të simuluar një koncep
 
 Skenari: jë votues potencial duhet të paraqitet në organizatorin e votimit, duke treguar ID e tij dhe dokumente të tjera ligjore. Më në fund, ai duhet të paraqesë një çelës publik d.m.th., ECC. Supozojmë se ai e ka regjistruar me sukses çelësin publik.
 
-Via the ballot page (see screenshot below), the voter needs to enter his pseudonym (UUID 4) and candidate number. The ballot is then signed using a private key. If the submitted ballot is proven to be valid, it will be sealed (mined). In this section, one block contains only the aforementioned ballot. You can examine the whole process in detail using the console.
+Përmes faqes së votimit (si më poshtë), votuesi duhet të shkruajë pseudonimin e tij (UUID 4) dhe numrin e kandidatit të cilin dëshiron ta votojë. Më pas, kjo fletë e votimit nënshkruhet duke përdorur një çelës privat. Nëse fleta e paraqitur e votimit vërtetohet se është e vlefshme, ajo do të vuloset (minohet). Në këtë pjesë një bllok përmban vetëm fletën e votimit. Procesi mund të shqyrtohet i tëri duke përdorur konsolën.
 
-(The public-private key pair is hard coded and generated externally. See Technical Details below.)
+
+(Çifti i çelësave publik-privat është i koduar në mënyrë të vështirë dhe gjenerohet nga jashtë. Shihni detajet teknike më poshtë.)
 
 ![Ballot page](https://user-images.githubusercontent.com/76743818/106745563-91bd7a80-6621-11eb-9c56-c559cc19ee59.png)
 
 ### "Chain"
 
-In this section, transactions (ballots) with valid data will be generated. They are then sealed into blocks. After that, you can explore the transactions and blocks, try to tamper the records, and verify them.
+Në këtë seksion, do të gjenerohen transaksione (fletëvotime) me të dhëna të vlefshme. Më pas ato mbyllen në blloqe. Pas kësaj, ju mund të eksploroni transaksionet dhe blloqet, si dhe të përpiqeni të manipuloni të dhënat dhe t'i verifikoni ato. 
 
-![Sealed ballot](https://raw.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/transactions.PNG)
+![Screenshot_2](https://user-images.githubusercontent.com/75855158/106808560-d588a200-666a-11eb-8168-09d6fe115813.png)
+![Screenshot_3](https://user-images.githubusercontent.com/75855158/106808562-d6213880-666a-11eb-94c8-79dcf9c5b09e.png)
+![Screenshot_4](https://user-images.githubusercontent.com/75855158/106808564-d6b9cf00-666a-11eb-8424-35e30d170a24.png)
 
-![Block](https://raw.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/block.PNG)
+<!-- _The screenshot above shows that a node's database (i.e., your node) has been tampered. You will not see this in real blockchain explorer, but this should give you a glimpse of why tampering immutable ledger is futile._ -->
 
-_The screenshot above shows that a node's database (i.e., your node) has been tampered. You will not see this in real blockchain explorer, but this should give you a glimpse of why tampering immutable ledger is futile._
+## Si ta ekzekutojmë
 
-## How to run
+1. Bëni gati mjedisin tuaj virtual (rekomandohet). 
+2. Vendosni 'requirements.txt' file. Instaloni paketat e nevojshme: `pip install -r requirements.txt`.
+3. Vendosni 'manage.py' file. Ekzekutoni `python manage.py runserver`. Pastaj qasuni në linkun http://localhost:8000.
+4. Nga faqja kryesore, gjithashtu ekzekutoni 'Block' ose 'Chain' duke klikuar 'Start'.
 
-1. Get your virtual environment ready (recommended). 
-2. Locate the 'requirements.txt' file. Install necessary packages: `pip install -r requirements.txt`.
-3. Locate the 'manage.py' file. Run `python manage.py runserver`. Then access http://localhost:8000.
-4. From the homepage, either run 'Block' or 'Chain' section by clicking 'Start'.
+## Detajet teknike
 
-## Technical Details
+Çelësi privat i përdorur në këtë demonstrim ndodhet në folder-in 'bbevoting_project' ('demo_private.pem' file), ndërsa çelësi përkatës publik është i koduar në mënyrë të vështirë  'settings.py' (look for `PUBLIC_KEY`). gjithashtu mund të vendosni disa karakteristika të konfigurimit si p.sh. `N_TRANSACTIONS`, `N_TX_PER_BLOCK`, dhe vështirësia e enigmës  (`PUZZLE` dhe `PLENGTH`).
 
-The private key used in this demo is located in 'bbevoting_project' folder ('demo_private.pem' file), while the corresponding public key is hard coded in 'settings.py' (look for `PUBLIC_KEY`). You may also set some config vars such as `N_TRANSACTIONS`, `N_TX_PER_BLOCK`, and the puzzle difficulty (`PUZZLE` and `PLENGTH`).
+## Fotografitë
 
-## Screenshots
+Folderi 'screenshots' përmban fotografitë që janë nxjerrë nga projekti.
 
-See the 'screenshots' folder.
+## Mirënjohjet
 
-## Acknowledgement
+Ky projekt përdor një version të modifikuar të  "pymerkletools" nga Tierion për krijimin e merkle root duke përdorur SHA3.
 
+## Licensa
 
-
-This project uses a modified version of "pymerkletools" by Tierion for creating merkle root using SHA3.
-
-## License
-
-See included MIT License.
+Shikoni MIT licencën e përfshirë.
