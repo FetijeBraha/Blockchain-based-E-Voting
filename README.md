@@ -2,17 +2,19 @@
 
 ## Description
 
-This is a Python-based Django project to simulate a concept of blockchain-based e-voting protocol. This project should be run only on the development server with Debug mode on. The simulation comprises two sections: __"Block"__ and __"Chain"__.
+Ky është një projekt i bazuar në Python Django për të simuluar një koncept të protokollit të votimit elektronik të bazuar në blockchain. Ky projekt duhet të ekzekutohet vetëm në serverin e zhvillimit me mënyrën Debug të aktivizuar. Simulimi përfshin dy seksione:  __"Block"__ dhe __"Chain"__.
+![block and chain](https://user-images.githubusercontent.com/76743818/106743346-8c126580-661e-11eb-87e3-e274f663f98e.png)
+
 
 ### "Block"
 
-Scenario: a potential voter has to present himself to the voting organizer, showing his ID and other legal documents. Finally, he has to submit a public key i.e., ECC. Assume that he has successfully registered the public key.
+Skenari: jë votues potencial duhet të paraqitet në organizatorin e votimit, duke treguar ID e tij dhe dokumente të tjera ligjore. Më në fund, ai duhet të paraqesë një çelës publik d.m.th., ECC. Supozojmë se ai e ka regjistruar me sukses çelësin publik.
 
 Via the ballot page (see screenshot below), the voter needs to enter his pseudonym (UUID 4) and candidate number. The ballot is then signed using a private key. If the submitted ballot is proven to be valid, it will be sealed (mined). In this section, one block contains only the aforementioned ballot. You can examine the whole process in detail using the console.
 
 (The public-private key pair is hard coded and generated externally. See Technical Details below.)
 
-![Ballot page](https://raw.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/ballot.PNG)
+![Ballot page](https://user-images.githubusercontent.com/76743818/106745563-91bd7a80-6621-11eb-9c56-c559cc19ee59.png)
 
 ### "Chain"
 
@@ -41,7 +43,7 @@ See the 'screenshots' folder.
 
 ## Acknowledgement
 
-For Prof. ABM.
+
 
 This project uses a modified version of "pymerkletools" by Tierion for creating merkle root using SHA3.
 
