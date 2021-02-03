@@ -20,7 +20,7 @@ Përmes faqes së votimit (si më poshtë), votuesi duhet të shkruajë pseudoni
 ### "Chain"
 
 Në këtë seksion, do të gjenerohen transaksione (fletëvotime) me të dhëna të vlefshme. Më pas ato mbyllen në blloqe. Pas kësaj, ju mund të eksploroni transaksionet dhe blloqet, si dhe të përpiqeni të manipuloni të dhënat dhe t'i verifikoni ato. 
-(https://raw.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/Screenshot_2.jpg)
+
 ![Sealed ballot](https://raw.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/Screenshot_3.jpg)
 
 ![Block](https://raw.githubusercontent.com/GottfriedCP/Blockchain-based-E-Voting-Simulation/master/screenshots/Screenshot_4.jpg)
