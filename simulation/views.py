@@ -85,7 +85,7 @@ def seal(request):
             nonce += 1
 
         # Create the block
-        block = Block(id=i, name=name, Lastname=LastName, prev_h=prev_hash, merkle_h=merkle_h, h=h, nonce=nonce, timestamp=timestamp)
+        block = Block(id=i, name=name, LastName=LastName, prev_h=prev_hash, merkle_h=merkle_h, h=h, nonce=nonce, timestamp=timestamp)
         block.save()
         print('\nBlock {} is mined\n'.format(i))
         # Set this hash as prev hash
@@ -182,7 +182,7 @@ def sync(request):
     print('\nTrying to sync {} transactions with 1 node(s)...\n'.format(deleted_old_votes))
     bk_votes = VoteBackup.objects.all().order_by('timestamp')
     for bk_v in bk_votes:
-        vote = Vote(id=bk_v.id, name=bk_v.name, Lastname=bk_v.LastName, vote=bk_v.vote, timestamp=bk_v.timestamp, block_id=bk_v.block_id)
+        vote = Vote(id=bk_v.id, name=bk_v.name, vote=bk_v.vote, timestamp=bk_v.timestamp, block_id=bk_v.block_id)
         vote.save()
     print('\nSync complete.\n')
     messages.info(request, 'All blocks have been synced successfully.')
@@ -197,7 +197,7 @@ def sync_block(request, block_id):
     # Then rewrite from backup node
     bak_votes = VoteBackup.objects.filter(block_id=block_id).order_by('timestamp')
     for bv in bak_votes:
-        v = Vote(id=bv.id, name=bv.name, Lastname=bv.LastName, vote=bv.vote, timestamp=bv.timestamp, block_id=bv.block_id)
+        v = Vote(id=bv.id, name=bv.name, vote=bv.vote, timestamp=bv.timestamp, block_id=bv.block_id)
         v.save()
     # Just in case, delete transactions without valid block
     block_count = Block.objects.all().count()

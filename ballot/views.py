@@ -30,7 +30,8 @@ def create(request):
 
             # Verify the signature using registered public key
             pub_key = ECC.import_key(settings.PUBLIC_KEY)
-            verifier = DSS.new(pub_key, 'fips-186-3')
+            verifier = DSS.new(pub_key, 'fips-186-3').sign(h)
+            h = SHA256.new(received_message)
         
             verifier.verify(h, signature)
             status = 'Votimi nënshkruhet me sukses.'
