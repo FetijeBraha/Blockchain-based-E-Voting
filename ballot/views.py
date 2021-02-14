@@ -31,14 +31,14 @@ def create(request):
             # Verify the signature using registered public key
             pub_key = ECC.import_key(settings.PUBLIC_KEY)
             verifier = DSS.new(pub_key, 'fips-186-3').sign(h)
-            h = SHA256.new(received_message)
         
+
             verifier.verify(h, signature)
-            status = 'Votimi nënshkruhet me sukses.'
-            error = False
-        except (ValueError, TypeError):
             status = 'Çelësi nuk është regjistruar.'
             error = True
+        except (ValueError, TypeError):
+            status = 'Votimi nënshkruhet me sukses.'
+            error = False
         
         context = {
             'ballot': ballot,
